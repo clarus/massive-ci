@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu
 MAINTAINER Guillaume Claret
 
 RUN apt-get update && apt-get upgrade -y
