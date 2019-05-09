@@ -34,18 +34,21 @@ RUN time opam switch create 4.02.3
 RUN time opam install coq.8.5.3 -j4 -y
 RUN opam install coq-of-ocaml.1.0.0 -y
 # TODO: repair
-# RUN opam exec "coqOfOCaml.native --help"
+# RUN opam exec -- coqOfOCaml.native --help
 RUN opam remove coq-of-ocaml
 
 # Test coq-of-ocaml.1.1.0
 RUN opam install coq-of-ocaml.1.1.0 -y
 # TODO: repair
-# RUN opam exec "coqOfOCaml.native --help"
+# RUN opam exec -- coqOfOCaml.native --help
 RUN opam remove coq-of-ocaml
 
 # Test coq-of-ocaml.1.2.1
 RUN time opam switch create ocaml-base-compiler.4.05.0
 RUN time opam install coq.8.9.0 -j4 -y
 RUN opam install coq-of-ocaml.1.2.1 -y
-RUN opam exec "coqOfOCaml.native --help"
+RUN opam exec -- coqOfOCaml.native --help
+COPY input.ml output.v ./
+RUN opam exec -- ocamlc -bin-annot input.ml
+RUN opam exec -- coqOfOCaml.native -mode v input.cmt |diff -su output.v -
 RUN opam remove coq-of-ocaml
