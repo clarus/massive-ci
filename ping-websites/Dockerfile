@@ -36,3 +36,7 @@ RUN ping -c1 pablo.rauzy.name
 RUN curl -L pablo.rauzy.name |grep "Pablo Rauzy"
 RUN ping -c1 guillaume.segu.in
 RUN curl -L guillaume.segu.in |grep "Guillaume Seguin"
+
+# Projects
+RUN ping -c1 compcert.inria.fr
+RUN curl -L http://compcert.inria.fr/verasco/ |grep "a formally-verified static analyzer for C"
