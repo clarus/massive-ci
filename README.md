@@ -1,5 +1,5 @@
 # Massive CI
-> Make sure no one kills my projects
+> Make sure no one kills my or my friends' projects
 
 A collection of Dockerfiles, each one testing a different project. All the Dockerfiles should be able to build.
 
