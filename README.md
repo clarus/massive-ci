@@ -12,3 +12,8 @@ To build all the images without the Docker cache:
 ```
 sudo ./run.sh --no-cache
 ```
+
+To test one image:
+```
+sudo docker build folder_name/
+```
